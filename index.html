@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Inventory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1 class="logo">MyStore</h1>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#inventory">Inventory</a></li>
+      <li><button id="cart-btn" class="nav-button">Cart</button></li>
+      <li><button id="add-product-btn" class="nav-button">Add Product</button></li>
+      <li><button id="sales-record-btn" class="nav-button">Sales Record</button></li>
+    </ul>
+    <input type="text" id="search" placeholder="Search products...">
+  </nav>
+
+  <!-- Hero Section -->
+  <header id="home" class="hero">
+    <h2>Welcome to My Store Inventory</h2>
+    <p>Manage products, track inventory, and shop smarter.</p>
+  </header>
+
+  <!-- Inventory -->
+  <section id="inventory" class="section">
+    <h2>Product Inventory</h2>
+    <div id="product-list" class="product-grid"></div>
+  </section>
+
+  <!-- React widget section -->
+<section id="react-widget" class="my-10">
+  <div id="react-root"></div>
+</section>
+
+
+  <!-- Add Product Modal -->
+  <div id="add-product-modal" class="modal hidden">
+    <div class="modal-content">
+      <button type="button" class="close-btn" id="closeAddProductBtn">&times;</button>
+      <h2>Add New Product</h2>
+      <form id="productForm" class="form">
+        <input type="text" id="productName" placeholder="Product Name" required>
+        <input type="number" id="productPrice" placeholder="Price" required>
+        <input type="url" id="productImage" placeholder="Image URL" required>
+        <button type="submit" class="btn">Add Product</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart Modal -->
+  <div id="cart-modal" class="modal hidden">
+    <div class="modal-content">
+      <button type="button" class="close-btn" id="closeCartBtn">&times;</button>
+      <h2>Your Cart</h2>
+      <div id="cartContainer" class="cart-box">
+        <p>Cart is empty.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Sales Record Modal -->
+  <div id="sales-modal" class="modal hidden">
+    <div class="modal-content">
+      <button type="button" class="close-btn" id="closeSalesBtn">&times;</button>
+      <h2>Sales Record</h2>
+      <div id="salesContainer" class="sales-box">
+        <div class="sales-summary">
+          <h3>Summary</h3>
+          <p>Total Items Sold: <span id="totalSold">0</span></p>
+          <p>Total Revenue: ₹<span id="totalRevenue">0</span></p>
+          <button id="clearSalesBtn" class="btn btn-danger">Clear Records</button>
+        </div>
+        <div class="sales-details">
+          <h3>Product Details</h3>
+          <div id="salesList"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="back.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
